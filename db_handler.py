@@ -14,3 +14,7 @@ def fetch_abiturfach_kombination(kurse_kombi):
     return cur.fetchone()[0]
 
 
+def add_kurs(attributes):
+    sql = "INSERT INTO tbl_kurs (None, ?, ?, ?, ?)"
+
+    cur.execute(sql, attributes)
