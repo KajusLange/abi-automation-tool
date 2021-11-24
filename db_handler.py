@@ -21,3 +21,8 @@ def add_kurs(attributes):
 def add_student(attributes):
     sql = "INSERT INTO tbl_schueler (None, ?, ?, ?, ?, ?)"
     cur.execute(sql, attributes)
+
+
+def add_kursbelegung(student_id, course_id):
+    sql = "INSERT INTO tbl_kurs_belegung (None, ?, ?, None, None, None, None, None)"
+    cur.execute(sql, (student_id, course_id))
