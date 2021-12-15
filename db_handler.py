@@ -24,11 +24,11 @@ def add_student(attributes):
 
 
 def add_kursbelegung(student_id, course_id):
-    sql = "INSERT INTO tbl_kurs_belegung (None, ?, ?, None, None, None, None, None)"
+    sql = "INSERT INTO tbl_kursbelegung (None, ?, ?, None, None, None, None, None)"
     cur.execute(sql, (student_id, course_id))
 
 
 def update_kursbelegung(points, student_id, course_id):
-    sql = """UPDATE tbl_kurs_belegung 
+    sql = """UPDATE tbl_kursbelegung 
     SET punkte_12_1=?, punkte_12_2=?, punkte_13_1=?, punkte_13_2=? WHERE schueler_id=? AND course_id=?"""
     cur.execute(sql, points + (student_id, course_id))
