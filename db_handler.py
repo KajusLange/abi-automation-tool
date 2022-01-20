@@ -25,7 +25,7 @@ def fetch_kurse():
 
 
 def add_student(attributes):
-    sql = "INSERT INTO tbl_schueler (None, ?, ?, ?, ?, ?)"
+    sql = "INSERT INTO tbl_schueler VALUES (NULL, ?, ?, ?, ?, ?, ?)"
     cur.execute(sql, attributes)
 
 
