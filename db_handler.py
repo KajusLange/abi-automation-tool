@@ -18,6 +18,12 @@ def add_kurs(attributes):
     cur.execute(sql, attributes)
 
 
+def fetch_kurse():
+    sql = "SELECT kurs_id, bezeichnung FROM tbl_kurs"
+    cur.execute(sql)
+    return cur.fetchall()
+
+
 def add_student(attributes):
     sql = "INSERT INTO tbl_schueler (None, ?, ?, ?, ?, ?)"
     cur.execute(sql, attributes)
