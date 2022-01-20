@@ -38,3 +38,9 @@ def update_kursbelegung(points, student_id, course_id):
     sql = """UPDATE tbl_kursbelegung 
     SET punkte_12_1=?, punkte_12_2=?, punkte_13_1=?, punkte_13_2=? WHERE schueler_id=? AND course_id=?"""
     cur.execute(sql, points + (student_id, course_id))
+
+
+def add_kursbelegung_template(name, kurs_id):
+    sql = "INSERT INTO tbl_kursbelegung_template VALUES(?, ?)"
+    cur.execute(sql, (name, kurs_id))
+
