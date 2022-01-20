@@ -44,3 +44,8 @@ def add_kursbelegung_template(name, kurs_id):
     sql = "INSERT INTO tbl_kursbelegung_template VALUES(?, ?)"
     cur.execute(sql, (name, kurs_id))
 
+
+def fetch_kursbelegung_template(name):
+    sql = "SELECT kurs_id FROM tbl_kursbelegung_template WHERE template_name=?"
+    cur.execute(sql, (name,))
+    return cur.fetchall()
