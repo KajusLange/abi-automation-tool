@@ -49,3 +49,11 @@ def fetch_kursbelegung_template(name):
     sql = "SELECT kurs_id FROM tbl_kursbelegung_template WHERE template_name=?"
     cur.execute(sql, (name,))
     return cur.fetchall()
+
+
+def fetch_student_kursbelegung_group_size(student_id):
+    sql = """SELECT COUNT(tkb.kurs_id) FROM tbl_kursbelegung AS tkb
+        INNER JOIN tbl_kurs AS tk ON tk.kurs_id = tkb.kurs_id
+        WHERE tkb.student_id=? GROUP BY tk.aufgabenfeld"""
+    cur.execute(sql, (student_id,))
+    return cur.fetchall()
