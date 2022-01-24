@@ -34,10 +34,12 @@ def add_kursbelegung(course_id, student_id):
     cur.execute(sql, (course_id, student_id))
 
 
-def update_kursbelegung(points, student_id, course_id):
+def update_kursbelegung(abiturfach, points, student_id, course_id):
     sql = """UPDATE tbl_kursbelegung 
-    SET punkte_12_1=?, punkte_12_2=?, punkte_13_1=?, punkte_13_2=? WHERE schueler_id=? AND course_id=?"""
-    cur.execute(sql, points + (student_id, course_id))
+        SET abiturfach=?, punkte_12_1=?, punkte_12_2=?, punkte_13_1=?, punkte_13_2=?,
+            punkte_pruefung=?, punkte_nachpruefung=?
+        WHERE kurs_id=? AND student_id=?"""
+    cur.execute(sql, (abiturfach,) + points + (student_id, course_id))
 
 
 def add_kursbelegung_template(name, kurs_id):
