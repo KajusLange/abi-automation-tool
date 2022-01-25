@@ -21,3 +21,6 @@ class Course:
 class Leistungskurs(Course):
     def __init__(self, id, title, aufgabenfeld, abi, points):
         super(Leistungskurs, self).__init__(id, title, aufgabenfeld, abi, points)
+
+    def sum_points(self):
+        return sum(self.points * 2)
