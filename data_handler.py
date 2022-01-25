@@ -30,3 +30,8 @@ class Leistungskurs(Course):
 
     def n_defizite(self):
         return sum(1 for x in self.points if x < 5)
+
+
+class Grundkurs(Course):
+    def __init__(self, id, title, aufgabenfeld, abi, points):
+        super(Grundkurs, self).__init__(id, title, aufgabenfeld, abi, points)
