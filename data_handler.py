@@ -40,3 +40,6 @@ class Grundkurs(Course):
 
     def sum_points(self):
         return sum(self.points)
+
+    def avg_points(self):
+        return round(self.sum_points() / 4, 2)
