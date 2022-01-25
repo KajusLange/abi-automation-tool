@@ -24,3 +24,6 @@ class Leistungskurs(Course):
 
     def sum_points(self):
         return sum(self.points * 2)
+
+    def avg_points(self):
+        return round(sum(self.points) / 4, 2)
