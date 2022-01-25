@@ -30,7 +30,7 @@ def add_student(attributes):
 
 
 def add_kursbelegung(course_id, student_id):
-    sql = "INSERT INTO tbl_kursbelegung VALUES (?, ?, NULL, NULL, NULL, NULL, NULL, NULL, NULL)"
+    sql = "INSERT OR IGNORE INTO tbl_kursbelegung VALUES (?, ?, NULL, NULL, NULL, NULL, NULL, NULL, NULL)"
     cur.execute(sql, (course_id, student_id))
 
 
