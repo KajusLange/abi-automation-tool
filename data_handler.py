@@ -12,6 +12,6 @@ class Student:
 class Course:
     def __init__(self, id, title, abi, points):
         self.id = id
-        self.tilte = title
+        self.title = title
         self.abi = abi
         self.points = points
