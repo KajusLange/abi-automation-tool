@@ -16,6 +16,7 @@ class Course:
         self.agf = aufgabenfeld
         self.abi = abi
         self.points = points
+        self.points.sort(reversed=True)
 
 
 class Leistungskurs(Course):
