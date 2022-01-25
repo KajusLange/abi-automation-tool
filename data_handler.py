@@ -54,3 +54,7 @@ class Grundkurs(Course):
 
     def pflicht_defizite(self):
         return 0 if self.pflicht_n == 0 else sum(1 for x in self.points[0:self.pflicht_n] if x < 5)
+
+    def extra_defizite(self):
+        p, e = self.pflicht_n, self.extra_n
+        return 0 if e == 0 else sum(1 for x in self.points[p:p+e] if x < 5)
