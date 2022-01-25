@@ -10,8 +10,9 @@ class Student:
 
 
 class Course:
-    def __init__(self, id, title, abi, points):
+    def __init__(self, id, title, aufgabenfeld, abi, points):
         self.id = id
         self.title = title
+        self.agf = aufgabenfeld
         self.abi = abi
         self.points = points
