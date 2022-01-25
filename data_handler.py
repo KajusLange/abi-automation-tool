@@ -27,3 +27,6 @@ class Leistungskurs(Course):
 
     def avg_points(self):
         return round(sum(self.points) / 4, 2)
+
+    def n_defizite(self):
+        return sum(1 for x in self.points if x < 5)
