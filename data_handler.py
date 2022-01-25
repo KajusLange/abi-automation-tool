@@ -47,3 +47,7 @@ class Grundkurs(Course):
 
     def pflicht_points(self):
         return sum(self.points[0:self.pflicht_n])
+
+    def extra_points(self):
+        p, e = self.pflicht_n, self.extra_n
+        return sum(self.points[p:p+e])
