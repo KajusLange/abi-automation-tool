@@ -35,3 +35,5 @@ class Leistungskurs(Course):
 class Grundkurs(Course):
     def __init__(self, id, title, aufgabenfeld, abi, points):
         super(Grundkurs, self).__init__(id, title, aufgabenfeld, abi, points)
+        self.pflicht_n = 0
+        self.extra_n = 0
