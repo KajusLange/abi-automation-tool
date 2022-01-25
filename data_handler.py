@@ -37,3 +37,6 @@ class Grundkurs(Course):
         super(Grundkurs, self).__init__(id, title, aufgabenfeld, abi, points)
         self.pflicht_n = 0
         self.extra_n = 0
+
+    def sum_points(self):
+        return sum(self.points)
