@@ -16,3 +16,8 @@ class Course:
         self.agf = aufgabenfeld
         self.abi = abi
         self.points = points
+
+
+class Leistungskurs(Course):
+    def __init__(self, id, title, aufgabenfeld, abi, points):
+        super(Leistungskurs, self).__init__(id, title, aufgabenfeld, abi, points)
