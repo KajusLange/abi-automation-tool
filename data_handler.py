@@ -16,7 +16,7 @@ class Course:
         self.agf = aufgabenfeld
         self.abi = abi
         self.points = points
-        self.points.sort(reversed=True)
+        self.points.sort(reverse=True)
 
 
 class Leistungskurs(Course):
@@ -44,3 +44,6 @@ class Grundkurs(Course):
 
     def avg_points(self):
         return round(self.sum_points() / 4, 2)
+
+    def pflicht_points(self):
+        return sum(self.points[0:self.pflicht_n])
