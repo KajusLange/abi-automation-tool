@@ -59,3 +59,9 @@ def fetch_student_kursbelegung_group_size(student_id):
         WHERE tkb.student_id=? GROUP BY tk.aufgabenfeld"""
     cur.execute(sql, (student_id,))
     return cur.fetchall()
+
+
+def fetch_student_kursbelegung(student_id):
+    sql = "SELECT * FROM student_kursbelegung WHERE student_id=?"
+    cur.execute(sql, (student_id,))
+    return cur.fetchall()
