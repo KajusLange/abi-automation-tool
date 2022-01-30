@@ -10,18 +10,19 @@ class Student:
 
 
 class Course:
-    def __init__(self, id, title, aufgabenfeld, abi, points):
+    def __init__(self, id, title, aufgabenfeld, abi, points, diffkurs):
         self.id = id
         self.title = title
         self.agf = aufgabenfeld
         self.abi = abi
         self.points = points
-        self.points.sort(reverse=True)
+        self.diffkurs = diffkurs
+        #self.points.sort(reverse=True)
 
 
 class Leistungskurs(Course):
-    def __init__(self, id, title, aufgabenfeld, abi, points):
-        super(Leistungskurs, self).__init__(id, title, aufgabenfeld, abi, points)
+    def __init__(self, id, title, aufgabenfeld, abi, points, diffkurs):
+        super().__init__(id, title, aufgabenfeld, abi, points, diffkurs)
 
     def sum_points(self):
         return sum(self.points * 2)
@@ -34,8 +35,8 @@ class Leistungskurs(Course):
 
 
 class Grundkurs(Course):
-    def __init__(self, id, title, aufgabenfeld, abi, points):
-        super(Grundkurs, self).__init__(id, title, aufgabenfeld, abi, points)
+    def __init__(self, id, title, aufgabenfeld, abi, points, diffkurs):
+        super().__init__(id, title, aufgabenfeld, abi, points, diffkurs)
         self.pflicht_n = 0
         self.extra_n = 0
 
